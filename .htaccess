@@ -1,0 +1,46 @@
+RewriteEngine On
+RewriteBase /fadein/
+
+
+
+# Core routing
+#RewriteRule ^$ core/homepage.php [L]
+RewriteRule ^posting$ core/posting.php [L]
+RewriteRule ^message$ core/messaging.php [L]
+RewriteRule ^authentication$ core/authentication.php [L]
+RewriteRule ^profile$ core/profile.php [L]
+RewriteRule ^account$ core/account.php [L]
+RewriteRule ^friends$ core/friends.php [L]
+RewriteRule ^follow$ core/follow.php [L]
+RewriteRule ^activity$ core/activity.php [L]
+
+RewriteRule ^send-email$ core/email-send.php [L]
+RewriteRule ^verify-email$ core/email-verify.php [L]
+
+RewriteRule ^cookies$ content/information/cookies.html [L]
+
+RewriteRule ^welcome$ content/homepage.html [L]
+
+RewriteRule ^upload-file$ core/file/post.php [L]
+ReWriteRule ^show-file$ core/file/home.php [L]
+#RewriteRule ^group$   core/group.php [L] Soon to be changed hopefully
+
+# Redirect profile?user=username to profile/username
+RewriteCond %{QUERY_STRING} ^user=([^&]+)$
+RewriteRule ^profile$ profile/%1? [L,R=301]
+RewriteRule ^profile/$ core/profile.php [L]
+RewriteRule ^profile/([^/]+)$ core/profile.php?user=$1 [L]
+RewriteRule ^profile$ core/profile.php [L]
+
+RewriteCond %{QUERY_STRING} ^post=([0-9]+)$
+RewriteRule ^post$ post/%1? [L,R=301]
+RewriteRule ^post/([0-9]+)$ core/post.php?post=$1 [L]
+
+RewriteRule /?\.htaccess$ - [F,L]
+RewriteRule ^/?env/config\.env$ - [F,L]
+RewriteRule ^/?env/ntfy\.env$ - [F,L]
+
+
+
+
+

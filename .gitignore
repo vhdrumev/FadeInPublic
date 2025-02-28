@@ -1,0 +1,5 @@
+.idea
+log
+.gitignore
+/public/upload
+.codegpt
