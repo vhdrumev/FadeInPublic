@@ -1,0 +1,151 @@
+@import '../font.css';
+
+* {
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background-color: #121212;
+    color: #f1f1f1;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    overflow-y: auto;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.sub-container {
+    border-radius: 10px;
+    width: 50%;
+    background-color: #212121;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.sub-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.sub-container .logged_in {
+    text-align: center;
+    width: 100%;
+}
+
+.sub-container input {
+    width: 250px;
+    padding: 12px;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #fff;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease-in-out;
+}
+
+.sub-container input:focus {
+    border-bottom: 2px solid orange;
+}
+
+.sub-container button {
+    border-radius: 10px;
+    background-color: orange;
+    border: 0;
+    padding: 10px 20px;
+    margin-top: 10px;
+}
+
+.sub-container .remember_me {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.sub-container .remember_me {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.sub-container .remember_me input {
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    border: 2px solid #ccc;
+    border-radius: 3px;
+    background-color: white;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    position: relative;
+}
+
+.sub-container .remember_me input:checked {
+    background-color: orange;
+    border-color: orange;
+}
+
+.sub-container .remember_me input:checked::after {
+    content: '✔';
+    font-size: 10px;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+}
+
+.sub-container .remember_me label {
+    user-select: none;
+    cursor: pointer;
+}
+
+
+
+.footer {
+    position: absolute;
+    color: #ccc;
+    bottom: 4px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    font-size: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    .container {
+        flex-direction: column;
+    }
+    .sub-container {
+        width: 100%;
+        justify-content: center;
+        padding: 20px 0;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .sub-container {
+        height: 80vh;
+        background-color: #121212;
+        align-items: center;
+    }
+}
+

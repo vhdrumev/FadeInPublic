@@ -1,0 +1,15 @@
+@import '../font.css';
+
+* {
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background-color: #121212;
+    color: #f1f1f1;
+    text-align: center;
+}
+
+a {
+    color: orange;
+}
